@@ -14,7 +14,18 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   show(value: string) {
-    // Unsafe DOM manipulation
+    // Unsafe DOM manipulation - XSS vulnerability
     document.getElementById('output')!.innerHTML = value;
+  }
+
+  // Additional security issues for CodeQL detection
+  executeScript(code: string) {
+    // Code injection vulnerability
+    eval(code);
+  }
+
+  unsafeRedirect(url: string) {
+    // Open redirect vulnerability
+    window.location.href = url;
   }
 }
