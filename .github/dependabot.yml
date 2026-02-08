@@ -3,8 +3,19 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
     open-pull-requests-limit: 10
     commit-message:
       prefix: "chore"
       include: "scope"
+    # Enable security updates
+    allow:
+      - dependency-type: "all"
+    # Group updates to reduce PR noise
+    groups:
+      security-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "patch"
+          - "minor"
