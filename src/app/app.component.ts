@@ -8,5 +8,8 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'demosecurity';
+  show(value: string) {
+    // Unsafe DOM manipulation
+    document.getElementById('output')!.innerHTML = value;
+  }
 }
