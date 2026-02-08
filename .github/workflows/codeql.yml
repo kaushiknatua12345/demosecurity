@@ -16,8 +16,7 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-  schedule:
-    - cron: '21 2 * * 2'
+  workflow_dispatch:  # Allow manual trigger
 
 jobs:
   analyze:
