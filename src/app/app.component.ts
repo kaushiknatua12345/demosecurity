@@ -4,7 +4,12 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
+  template: `
+    <h2>Angular CodeQL Demo</h2>
+    <input #userInput>
+    <button (click)="show(userInput.value)">Show</button>
+    <div id="output"></div>
+  `,
   styleUrl: './app.component.css'
 })
 export class AppComponent {
